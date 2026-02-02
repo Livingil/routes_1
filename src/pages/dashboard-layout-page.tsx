@@ -1,23 +1,17 @@
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { auth } from "../utils/auth";
-import { useEffect } from "react";
+import { useAuth } from "../context/useAuth";
 
 export const DashboardLayoutPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { logout } = useAuth();
 
   const isActive = (path: string) => {
     return location.pathname === path;
   };
 
-  useEffect(() => {
-    if (!auth.isAuthenticated()) {
-      navigate("/login");
-    }
-  }, [navigate]);
-
   const handleLogout = () => {
-    auth.logout();
+    logout();
     navigate("/");
   };
 
@@ -52,9 +46,8 @@ export const DashboardLayoutPage = () => {
         >
           Stats
         </Link>
+        <button onClick={handleLogout}>Logout</button>
       </nav>
-
-      <button onClick={handleLogout}>Logout</button>
 
       <Outlet />
     </>

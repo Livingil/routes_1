@@ -12,13 +12,21 @@ import {
   StatsPage,
 } from "./pages";
 import { statsLoader } from "./utils";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 export const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/dashboard" element={<DashboardLayoutPage />}>
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardLayoutPage />
+          </ProtectedRoute>
+        }
+      >
         <Route path="profile" element={<ProfilePage />} />
         <Route path="settings" element={<SettingPage />} />
         <Route path="stats" element={<StatsPage />} loader={statsLoader} />
