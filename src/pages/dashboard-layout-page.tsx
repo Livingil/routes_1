@@ -45,6 +45,33 @@ export const DashboardLayoutPage = () => {
           }}
         >
           Stats
+        </Link>{" "}
+        |
+        <Link
+          to="/dashboard/characters"
+          style={{
+            fontWeight: isActive("/dashboard/characters") ? "bold" : "normal",
+          }}
+        >
+          Characters
+        </Link>{" "}
+        |
+        <Link
+          to="/dashboard/locations"
+          style={{
+            fontWeight: isActive("/dashboard/locations") ? "bold" : "normal",
+          }}
+        >
+          Locations
+        </Link>{" "}
+        |
+        <Link
+          to="/dashboard/episodes"
+          style={{
+            fontWeight: isActive("/dashboard/episodes") ? "bold" : "normal",
+          }}
+        >
+          Episodes
         </Link>
         <button onClick={handleLogout}>Logout</button>
       </nav>

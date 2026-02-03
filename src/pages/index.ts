@@ -4,3 +4,6 @@ export * from "./profile-page";
 export * from "./dashboard-layout-page";
 export * from "./setting-page";
 export * from "./stats-page";
+export * from "./characters-page";
+export * from "./locations-page";
+export * from "./episodes-page";
