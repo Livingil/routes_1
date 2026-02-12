@@ -1,53 +1,55 @@
 import { lazy } from "react";
 
 export const HomePage = lazy(() =>
-  import("../pages/home-page").then((module) => ({ default: module.HomePage })),
+  import("../ui/pages/home-page").then((module) => ({
+    default: module.HomePage,
+  })),
 );
 
 export const LoginPage = lazy(() =>
-  import("../pages/login-page").then((module) => ({
+  import("../ui/pages/login-page").then((module) => ({
     default: module.LoginPage,
   })),
 );
 
 export const DashboardLayoutPage = lazy(() =>
-  import("../pages/dashboard-layout-page").then((module) => ({
+  import("../ui/pages/dashboard-layout-page").then((module) => ({
     default: module.DashboardLayoutPage,
   })),
 );
 
 export const ProfilePage = lazy(() =>
-  import("../pages/profile-page").then((module) => ({
+  import("../ui/pages/profile-page").then((module) => ({
     default: module.ProfilePage,
   })),
 );
 
 export const SettingPage = lazy(() =>
-  import("../pages/setting-page").then((module) => ({
+  import("../ui/pages/setting-page").then((module) => ({
     default: module.SettingPage,
   })),
 );
 
 export const StatsPage = lazy(() =>
-  import("../pages/stats-page").then((module) => ({
+  import("../ui/pages/stats-page").then((module) => ({
     default: module.StatsPage,
   })),
 );
 
 export const CharactersPage = lazy(() =>
-  import("../pages/characters-page").then((module) => ({
+  import("../ui/pages/characters-page").then((module) => ({
     default: module.CharactersPage,
   })),
 );
 
 export const LocationsPage = lazy(() =>
-  import("../pages/locations-page").then((module) => ({
+  import("../ui/pages/locations-page").then((module) => ({
     default: module.LocationsPage,
   })),
 );
 
 export const EpisodesPage = lazy(() =>
-  import("../pages/episodes-page").then((module) => ({
+  import("../ui/pages/episodes-page").then((module) => ({
     default: module.EpisodesPage,
   })),
 );

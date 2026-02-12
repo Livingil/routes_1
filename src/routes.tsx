@@ -1,7 +1,9 @@
+import { Button, Center, Loader, Stack, Text, Title } from "@mantine/core";
 import { Suspense } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Link,
   Route,
 } from "react-router-dom";
 import { statsLoader } from "./utils";
@@ -20,7 +22,26 @@ import {
 } from "./routes/lazyPages";
 
 const LoadingFallback = () => (
-  <div style={{ padding: "20px", textAlign: "center" }}>Loading...</div>
+  <Center py="xl">
+    <Stack gap="xs" align="center">
+      <Loader size="sm" />
+      <Text size="sm" c="dimmed">
+        Loading...
+      </Text>
+    </Stack>
+  </Center>
+);
+
+const NotFoundPage = () => (
+  <Center py="xl">
+    <Stack gap="sm" align="center">
+      <Title order={2}>404</Title>
+      <Text c="dimmed">Page not found.</Text>
+      <Button component={Link} to="/" variant="light">
+        Go home
+      </Button>
+    </Stack>
+  </Center>
 );
 
 const withSuspense = (
@@ -55,7 +76,7 @@ export const AppRoutes = createBrowserRouter(
         <Route path="locations" element={withSuspense(LocationsPage)} />
         <Route path="episodes" element={withSuspense(EpisodesPage)} />
       </Route>
-      <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+      <Route path="*" element={<NotFoundPage />} />
     </>,
   ),
 );

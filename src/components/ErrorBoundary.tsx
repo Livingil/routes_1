@@ -1,3 +1,4 @@
+import { Button, Container, Stack, Text, Title } from "@mantine/core";
 import { Component } from "react";
 import type { ErrorInfo, ReactNode } from "react";
 
@@ -27,15 +28,20 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ padding: "20px", color: "red" }}>
-          <h2>Что-то пошло не так</h2>
-          <details style={{ whiteSpace: "pre-wrap" }}>
-            {this.state.error && this.state.error.toString()}
-          </details>
-          <button onClick={() => this.setState({ hasError: false, error: null })}>
-            Попробовать снова
-          </button>
-        </div>
+        <Container size="sm" py="xl">
+          <Stack gap="md">
+            <Title order={2}>Что-то пошло не так</Title>
+            <Text c="red">
+              {this.state.error ? this.state.error.toString() : "Unknown error"}
+            </Text>
+            <Button
+              variant="light"
+              onClick={() => this.setState({ hasError: false, error: null })}
+            >
+              Попробовать снова
+            </Button>
+          </Stack>
+        </Container>
       );
     }
 
