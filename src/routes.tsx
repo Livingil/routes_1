@@ -79,4 +79,5 @@ export const AppRoutes = createBrowserRouter(
       <Route path="*" element={<NotFoundPage />} />
     </>,
   ),
+  { basename: "/routes_1" },
 );
