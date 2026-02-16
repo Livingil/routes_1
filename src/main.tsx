@@ -1,10 +1,17 @@
+import "@mantine/core/styles.css";
+import { MantineProvider } from "@mantine/core";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { App } from "./App.tsx";
-import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
+  <MantineProvider>
     <App />
-  </BrowserRouter>,
+  </MantineProvider>,
 );
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/routes_1/sw.js").catch(() => undefined);
+  });
+}
