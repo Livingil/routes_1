@@ -1,0 +1,1 @@
+import{j as e,T as t}from"./index-1NmhouI-.js";import{P as r}from"./PageShell-CnIet5Mx.js";const s=()=>e.jsx(r,{title:"Settings",description:"Manage your preferences.",children:e.jsx(t,{c:"dimmed",children:"Settings content can be placed here."})});export{s as SettingPage};

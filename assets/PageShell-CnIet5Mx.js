@@ -1,0 +1,1 @@
+import{j as s,C as a,S as i,v as n,T as x}from"./index-1NmhouI-.js";const t=({title:r,description:e,children:l})=>s.jsx(a,{size:"lg",py:"xl",children:s.jsxs(i,{gap:"md",children:[s.jsxs("div",{children:[s.jsx(n,{order:1,children:r}),e?s.jsx(x,{c:"dimmed",children:e}):null]}),l]})});export{t as P};
