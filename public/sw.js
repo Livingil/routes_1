@@ -1,17 +1,18 @@
 const CACHE_NAME = "routes-static-v1";
+const BASE_PATH = "/routes_1";
 const PRECACHE_URLS = [
-  "/",
-  "/index.html",
-  "/offline.html",
-  "/manifest.webmanifest",
-  "/icon-72x72.png",
-  "/icon-96x96.png",
-  "/icon-128x128.png",
-  "/icon-144x144.png",
-  "/icon-152x152.png",
-  "/icon-192x192.png",
-  "/icon-384x384.png",
-  "/icon-512x512.png",
+  `${BASE_PATH}/`,
+  `${BASE_PATH}/index.html`,
+  `${BASE_PATH}/offline.html`,
+  `${BASE_PATH}/manifest.webmanifest`,
+  `${BASE_PATH}/icon-72x72.png`,
+  `${BASE_PATH}/icon-96x96.png`,
+  `${BASE_PATH}/icon-128x128.png`,
+  `${BASE_PATH}/icon-144x144.png`,
+  `${BASE_PATH}/icon-152x152.png`,
+  `${BASE_PATH}/icon-192x192.png`,
+  `${BASE_PATH}/icon-384x384.png`,
+  `${BASE_PATH}/icon-512x512.png`,
 ];
 
 self.addEventListener("install", (event) => {
@@ -58,7 +59,7 @@ self.addEventListener("fetch", (event) => {
             }
             return response;
           })
-          .catch(() => cached || caches.match("/offline.html"));
+          .catch(() => cached || caches.match(`${BASE_PATH}/offline.html`));
 
         return cached || fetchPromise;
       }),
